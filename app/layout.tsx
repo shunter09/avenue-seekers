@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import Home from "@/app/Home/page";
+
 
 
 
@@ -38,12 +38,13 @@ export default function RootLayout({children}: LayoutProps<"/">) {
                 <Link href="/Contact">For Employers</Link>
             </div>
         </nav>
-        <Home/>
+
 
 
 
         {children}
         </body>
+
         </html>
 
     );

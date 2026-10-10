@@ -1,15 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka One');
 @import "tailwindcss";
-
+@tailwind utilities;
+@theme inline {
+    --font-fredoka: "Fredoka One", sans-serif;
+}
 :root {
-  --background: #ffffff;
+  --background: #fff6f6;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+
+}
+
+.animate-moving-gradient {
+    background-size: 200% auto;
+    animation: moveGradient 6s linear infinite;
+}
+
+.transition {
+    transition: ease-in-out width 0.7s, height 2s;
+}
+.transition:hover {
+    width: 165px;
+    height: 45px;
+    cursor: pointer;
+
+}
+
+@layer utilities {
+    @keyframes blink {
+        0%, 90%, 100% {
+            transform: scaleY(1);
+        }
+        95% {
+            transform: scaleY(0.1);
+        }
+    }
+
+    .animate-blink {
+        display: inline-block;
+        animation: blink 6s infinite;
+        transform-origin: center;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +61,8 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+html {
+    scroll-snap-type: y proximity; /* switch to mandatory once you're happy with it */
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.25rem; /* nav height, so sections don't hide under it */
 }

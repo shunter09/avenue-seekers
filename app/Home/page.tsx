@@ -24,6 +24,7 @@ export default function Home() {
     }
 
   return (
+      <body className="bg-[#fff6f6]">
       <main>
         {/* Page 1: Hero */}
         <section
@@ -118,5 +119,6 @@ export default function Home() {
 
           </section>
       </main>
+      </body>
   )
 }

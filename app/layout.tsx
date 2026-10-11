@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Navbar from "@/app/screennav";
 
 
 
@@ -29,15 +30,7 @@ export default function RootLayout({children}: LayoutProps<"/">) {
             className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
         >
         <body className="bg-[#fff6f6]">
-        <nav className="w-full flex font-fredoka text-[#405068] text-xl p-7 sticky top-0 z-10 bg-[#fff6f6]">
-            <span className="w-8 animate-blink" role="img">👁</span>
-            <Link href="/Home"><h1>AvenueSeekers</h1></Link>
-            <div className="w-full flex justify-end gap-15 mr-7">
-                <Link href="/About">Jobs</Link>
-                <Link href="/Home">Volunteer</Link>
-                <Link href="/Contact">For Employers</Link>
-            </div>
-        </nav>
+        <Navbar/>
 
 
 

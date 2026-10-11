@@ -14,10 +14,10 @@ export default function Navbar() {
                 <Link href="/Home"><h1>AvenueSeekers</h1></Link>
 
                 {/* Desktop links: hidden on small screens, pushed right */}
-                <div className="hidden md:flex space-x-6 ml-auto">
-                    <Link href="/About">Jobs</Link>
-                    <Link href="/">Volunteer</Link>
-                    <Link href="/Contact">For Employers</Link>
+                <div className="hidden md:flex space-x-6 ml-auto gap-10">
+                    <Link href="/Jobs">Jobs</Link>
+                    <Link href="/Volunteer">Volunteer</Link>
+                    <Link href="/ForEmployers">For Employers</Link>
                 </div>
 
                 {/* Mobile button: hidden on md and up */}
@@ -35,9 +35,9 @@ export default function Navbar() {
             {/* Mobile dropdown: its own row below the top row */}
             {isOpen && (
                 <div className="md:hidden bg-white border-t mt-4 px-4 pt-2 pb-4 space-y-2">
-                    <Link href="/About" className="block py-2" onClick={() => setIsOpen(false)}>Jobs</Link>
-                    <Link href="/" className="block py-2" onClick={() => setIsOpen(false)}>Volunteer</Link>
-                    <Link href="/Contact" className="block py-2" onClick={() => setIsOpen(false)}>For Employers</Link>
+                    <Link href="/Jobs" className="block py-2" onClick={() => setIsOpen(false)}>Jobs</Link>
+                    <Link href="/Volunteer" className="block py-2" onClick={() => setIsOpen(false)}>Volunteer</Link>
+                    <Link href="/ForEmployers" className="block py-2" onClick={() => setIsOpen(false)}>For Employers</Link>
                 </div>
             )}
         </nav>
